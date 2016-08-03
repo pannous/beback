@@ -35,12 +35,12 @@ app.use(require('cookie-parser')());
 //     }
 // });
 var transporter = nodemailer.createTransport(smtpTransport({
-    host: 'smtp.pannous.info',
+    host: process.env.SMTP_HOST,
     port: 465,
     secureConnection:true,
     auth: {
-        user: 'support@pannous.net',
-        pass: '94832hr3498hf948372yh'
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
     }
 }));
 
@@ -173,6 +173,12 @@ app.get('/',(req,res)=>{
 	res.cookie('token', token, { maxAge: 900000, httpOnly: false });
 	res.header("Access-Control-Allow-Origin", "*");
 	res.render('index')}
+)
+
+app.get('/please',(req,res)=>{
+	token=random()
+	res.cookie('token', token, { maxAge: 900000, httpOnly: false });
+	res.render('please')}
 )
 
 app.listen(port, function () {
