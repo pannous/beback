@@ -1,0 +1,10 @@
+<% include head %>
+OK, your watch guard was cancelled.
+Your loved ones (<%=params.contacts%>) <%=(params.safe)?"were":"will be"%> informed that you are safe. 
+<!-- Shall we inform your contacts (<%= params.contacts %>) that you are safe? 
+<form action="checkin_submit" method="get" accept-charset="utf-8">
+	checkin_submit
+	get
+</form> -->
+<% include tail %>
+

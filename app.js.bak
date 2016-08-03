@@ -1,0 +1,31 @@
+#!/usr/bin/env nodemon
+var express = require('express');
+var nodemailer = require('nodemailer');
+
+// var passport = require('passport');
+// var LocalStrategy = require('passport-local').Strategy;
+var db = require('./db');
+
+// var conf = require('./conf')
+port=3003
+var app = express();
+app.engine('html', require('ejs').renderFile);
+app.use(require('serve-static')(__dirname+'./public'));
+app.use(require('cookie-parser')());
+// app.use(require('body-parser').urlencoded({ extended: true }));
+// app.use(require('express-session')({ secret: 'miau', resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get('/',(req,res)=>{res.render('index')})
+app.get('/submit',(req,res)=>{res.render('index')})
+
+app.get('/x', function (req, res) {
+  console.log(req.user);  // FTW!
+  res.render('home');
+});
+
+app.listen(port, function () {
+	// setup();
+  console.log('app listening on http://localhost:'+port);
+});  
