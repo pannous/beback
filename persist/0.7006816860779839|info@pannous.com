@@ -1,1 +1,0 @@
-{"token":"0.7006816860779839|info@pannous.com","day":"2016-08-03","hour":"","contacts":"chasi@gmx.de","message":"🐴 I'm on a hike. If I don't make it back, please send a ranger.","email":"info@pannous.com","password":"","panic":true}

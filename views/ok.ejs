@@ -1,7 +1,0 @@
-<% include head %>
-OK, You are almost set. Just click on the confirmation link in the email that we just sent you: <%= params.email%>.
-<form action="again/<%=params.token%>" method="get" accept-charset="utf-8">
-<button>Send again</button>
-</form>
-<button onClick="history.go(-1);return true;">BACK</button>
-<% include tail%>
